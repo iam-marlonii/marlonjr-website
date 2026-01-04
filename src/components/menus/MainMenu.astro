@@ -1,0 +1,104 @@
+---
+import { iconMap } from '../../config/icons';
+import Terminal from '../terminal/Terminal.astro';
+import MarlonAusbyJuniorBlueIcon from '../../assets/logos/MarlonAusbyJunior-Icon-Blue.png?url';
+---
+
+<header class="main-menu absolute top-0 left-0 right-0 z-200 flex items-center justify-center h-[64px] backdrop-blur-md min-[1031px]:flex border-b-[0.5px] border-border-dark">
+    <div class="flex items-center justify-between w-full max-w-[1280px] px-6">
+        <!-- Logo -->
+        <div class="flex items-center">
+            <a href="/" class="shrink-0">
+                <img
+                    src={MarlonAusbyJuniorBlueIcon}
+                    alt="Marlon Ausby Junior Icon in Blue"
+                    class="h-8 w-auto hover:opacity-70 transition-opacity duration-200"
+                />
+            </a>
+        </div>
+
+        <!-- Navigation Links -->
+        <nav class="nav-container relative flex items-center gap-1">
+            <a 
+                href="/about" 
+                class="relative z-10 px-4 py-1 text-sm bg-transparent font-regular border-2 border-transparent hover:border-(--color-skyBlue) transition-colors duration-200"
+            >
+                About
+            </a>
+            <a 
+                href="/resume" 
+                class="relative z-10 px-4 py-1 text-sm bg-transparent font-regular border-2 border-transparent hover:border-(--color-skyBlue) transition-colors duration-200"
+            >
+                Resume
+            </a>
+            <a 
+                href="/projects" 
+                class="relative z-10 px-4 py-1 text-sm bg-transparent font-regular border-2 border-transparent hover:border-(--color-skyBlue) transition-colors duration-200"
+            >
+                Projects
+            </a>
+            <a 
+                href="/contact"
+                class="relative z-10 px-4 py-1 text-sm bg-transparent font-regular border-2 border-transparent hover:border-(--color-skyBlue) transition-colors duration-200"
+            >
+                Contact
+            </a>
+        </nav>
+
+        <!-- Buttons -->
+        <div class="relative">
+            <button 
+                id="terminal-toggle"
+                class="relative z-10 px-4 py-1 cursor-pointer text-sm bg-black border-2 border-(--color-skyBlue)/40 hover:border-(--color-skyBlue) transition-colors duration-200"
+            >
+                Terminal
+            </button>
+
+            <button 
+            id="terminal-toggle"
+            class="relative z-10 px-4 py-1 cursor-pointer text-sm text-white bg-(--color-limeCream)/40 border-2 border-(--color-limeCream)/30 hover:border-(--color-limeCream) transition-colors duration-200"
+        >
+            Cheesecake
+        </button>
+        </div>
+    </div>
+    
+    <!-- Terminal Dropdown -->
+    <div 
+        id="terminal-dropdown"
+        class="hidden absolute left-0 right-0 top-[64px] z-50"
+    >
+        <div class="flex items-center justify-center w-full max-w-[1280px] mx-auto px-6">
+            <Terminal client:load />
+        </div>
+    </div>
+</header>
+
+<script>
+    function initTerminalToggle() {
+        const toggleButton = document.getElementById('terminal-toggle');
+        const dropdown = document.getElementById('terminal-dropdown');
+        
+        if (toggleButton && dropdown) {
+            toggleButton.addEventListener('click', (e) => {
+                e.stopPropagation();
+                dropdown.classList.toggle('hidden');
+            });
+            
+            // Close dropdown when clicking outside
+            document.addEventListener('click', (e) => {
+                const target = e.target as Node;
+                if (target && !dropdown.contains(target) && !toggleButton.contains(target)) {
+                    dropdown.classList.add('hidden');
+                }
+            });
+        }
+    }
+    
+    // Initialize when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initTerminalToggle);
+    } else {
+        initTerminalToggle();
+    }
+</script>
