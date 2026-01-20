@@ -4,7 +4,7 @@ import Terminal from '../terminal/Terminal.astro';
 import MarlonAusbyJuniorBlueIcon from '../../assets/logos/MarlonAusbyJunior-Icon-Blue.png?url';
 ---
 
-<header class="main-menu absolute top-0 left-0 right-0 z-200 flex items-center justify-center h-[64px] backdrop-blur-md min-[1031px]:flex border-b-[0.5px] border-border-dark">
+<header class="menu absolute top-0 left-0 right-0 z-200 flex items-center justify-center h-[64px] backdrop-blur-md min-[1031px]:flex border-b-[0.5px] border-border-dark font-kode-mono">
     <div class="flex items-center justify-between w-full max-w-[1280px] px-6">
         <!-- Logo -->
         <div class="flex items-center">
@@ -102,3 +102,11 @@ import MarlonAusbyJuniorBlueIcon from '../../assets/logos/MarlonAusbyJunior-Icon
         initTerminalToggle();
     }
 </script>
+
+<!-- <style>
+    .menu,
+    .menu * {
+        font-family: 'Kode Mono', monospace;
+    }
+</style>
+-->
