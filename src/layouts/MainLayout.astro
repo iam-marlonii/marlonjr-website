@@ -17,7 +17,7 @@ import FooterMenu from '../components/menus/MainFooter.astro';
 		<title>Marlon Ausby Junior</title>
 	</head>
 	<body>
-		<MainMenu />
+		<MainMenu currentPath={Astro.url.pathname} />
 		<slot />
 		<FooterMenu />
 	</body>
