@@ -23,7 +23,7 @@ const isActive = (path: string) => normalizedPath === (path.replace(/\/$/, '') |
         </div>
 
         <!-- Navigation Links -->
-        <nav class="nav-container relative flex items-center gap-2 p-1 border border-(--color-skyBlue)/40 rounded-full">
+        <nav class="nav-container relative flex items-center gap-2 p-1 border-2 border-(--color-skyBlue)/40 rounded-full">
             <a 
                 href="/" 
                 class:list={[homeLinkClass, isActive('/') && 'nav-link-active']}
