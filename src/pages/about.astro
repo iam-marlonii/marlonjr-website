@@ -74,16 +74,14 @@ const skyBlue = '#69d7f2';
 						Background in biomedical sciences brings a rigorous, analytical approach to designing reliable, scalable applications.
 					</p>
 				</div>
-				<!-- Skills -->
-				<div>
-					<div class="flex flex-col gap-5">
-						<div class="flex">
-							<h3 class="sub-heading">
-								Technical Skills
-							</h3>
-						</div>
+				<!-- Technical Skills -->
+					<details class="flex flex-col w-full px-4 py-2 rounded-lg bg-black border-3 border-(--color-skyBlue)/40 hover:border-(--color-skyBlue) transition-colors duration-200">
+						<summary class="skills-summary">
+							<h3 class="sub-heading">Technical Skills</h3>
+							<span class="skills-chevron w-6 h-6 flex shrink-0 rounded-full border-3 border-(--color-timberwolf)/40 hover:border-(--color-timberwolf) transition-transform duration-200" set:html={getIconWithColor('caret-down', 'currentColor')} />
+						</summary>
 						<!-- Languages -->
-						<div class="flex flex-col gap-2">
+						<div class="skill-bullet">
 							<h4 class="leading-none text-[1.5em] text-(--color-platinum) font-medium">
 								Languages
 							</h4>
@@ -124,7 +122,7 @@ const skyBlue = '#69d7f2';
 							</div>
 						</div>
 						<!-- Frameworks -->
-						<div class="flex flex-col gap-2">
+						<div class="skill-bullet">
 							<h4 class="leading-none text-[1.5em] text-(--color-platinum) font-medium">
 								Frameworks
 							</h4>
@@ -157,7 +155,7 @@ const skyBlue = '#69d7f2';
 							</div>
 						</div>
 						<!-- Databases -->
-						<div class="flex flex-col gap-2">
+						<div class="skill-bullet">
 							<h4 class="leading-none text-[1.5em] text-(--color-platinum) font-medium">
 								Databases
 							</h4>
@@ -180,7 +178,7 @@ const skyBlue = '#69d7f2';
 							</div>
 						</div>
 						<!-- Cloud & DevOps -->
-						<div class="flex flex-col gap-2">
+						<div class="skill-bullet">
 							<h4 class="leading-none text-[1.5em] text-(--color-platinum) font-medium">
 								Cloud & DevOps
 							</h4>
@@ -203,7 +201,7 @@ const skyBlue = '#69d7f2';
 							</div>
 						</div>
 						<!-- Payments & Security -->
-						<div class="flex flex-col gap-2">
+						<div class="skill-bullet">
 							<h4 class="leading-none text-[1.5em] text-(--color-platinum) font-medium">
 								Payments & Securities
 							</h4>
@@ -225,8 +223,7 @@ const skyBlue = '#69d7f2';
 								</div>
 							</div>
 						</div>
-					</div>
-				</div>
+					</details>
 				<!-- Experience -->
 				<div>
 					<h3 class="sub-heading">
@@ -292,5 +289,29 @@ const skyBlue = '#69d7f2';
 	.sub-title {
 
 	}
+
+	.skills-summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  cursor: pointer;
+}
+
+.skills-summary::-webkit-details-marker {
+  display: none;
+}
+
+details[open] .skills-chevron {
+  transform: rotate(180deg);
+}
+
+.skill-bullet {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
 
 </style>
