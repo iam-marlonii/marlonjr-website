@@ -75,13 +75,13 @@ const skyBlue = '#69d7f2';
 					</p>
 				</div>
 				<!-- Technical Skills -->
-					<details class="flex flex-col w-full px-4 py-2 rounded-lg bg-black border-3 border-(--color-skyBlue)/40 hover:border-(--color-skyBlue) transition-colors duration-200">
+					<details class="flex flex-col w-full px-4 py-1 rounded-lg bg-black border-3 border-(--color-skyBlue)/40 hover:border-(--color-skyBlue) transition-colors duration-200">
 						<summary class="skills-summary">
 							<h3 class="sub-heading">Technical Skills</h3>
 							<span class="skills-chevron w-6 h-6 flex shrink-0 rounded-full border-3 border-(--color-timberwolf)/40 hover:border-(--color-timberwolf) transition-transform duration-200" set:html={getIconWithColor('caret-down', 'currentColor')} />
 						</summary>
 						<!-- Languages -->
-						<div class="skill-bullet">
+						<div class="skill-bullet mt-6">
 							<h4 class="leading-none text-[1.5em] text-(--color-platinum) font-medium">
 								Languages
 							</h4>
@@ -225,17 +225,19 @@ const skyBlue = '#69d7f2';
 						</div>
 					</details>
 				<!-- Experience -->
-				<div>
-					<h3 class="sub-heading">
-						Professional Experience
-					</h3>
-				</div>
+				<details class="flex flex-col w-full px-4 py-1 rounded-lg bg-black border-3 border-(--color-skyBlue)/40 hover:border-(--color-skyBlue) transition-colors duration-200">
+					<summary class="skills-summary">
+						<h3 class="sub-heading">Experience</h3>
+						<span class="skills-chevron w-6 h-6 flex shrink-0 rounded-full border-3 border-(--color-timberwolf)/40 hover:border-(--color-timberwolf) transition-transform duration-200" set:html={getIconWithColor('caret-down', 'currentColor')} />
+					</summary>
+				</details>
 				<!-- Education -->
-				<div>
-					<h3 class="sub-heading">
-						Education
-					</h3>
-				</div>
+				<details class="flex flex-col w-full px-4 py-1 rounded-lg bg-black border-3 border-(--color-skyBlue)/40 hover:border-(--color-skyBlue) transition-colors duration-200">
+					<summary class="skills-summary">
+						<h3 class="sub-heading">Education</h3>
+						<span class="skills-chevron w-6 h-6 flex shrink-0 rounded-full border-3 border-(--color-timberwolf)/40 hover:border-(--color-timberwolf) transition-transform duration-200" set:html={getIconWithColor('caret-down', 'currentColor')} />
+					</summary>
+				</details>
 			</div>
 		</container>
 	</section>
