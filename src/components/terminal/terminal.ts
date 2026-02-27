@@ -31,7 +31,7 @@ export class Terminal {
 		this.container.innerHTML = `
 			<div class="terminal-output" id="terminal-output"></div>
 			<div class="terminal-input-line">
-				<span class="terminal-prompt">visitor@marlonjr:~$</span>
+				<span class="terminal-prompt">visitor@marlonii ~ %</span>
 				<input 
 					type="text" 
 					class="terminal-input" 
@@ -46,9 +46,11 @@ export class Terminal {
 		this.input = this.container.querySelector('#terminal-input') as HTMLInputElement;
 
 		// Add welcome message
-		this.addOutput('Welcome to Marlon Ausby Junior\'s website!');
+
+		this.addOutput('--------------------------------');
+		this.addOutput('Welcome to my website!');
 		this.addOutput('Type "help" to see available commands.');
-		this.addOutput('');
+		this.addOutput('--------------------------------');
 
 		// Set up event listeners
 		this.input.addEventListener('keydown', (e) => this.handleKeyDown(e));
@@ -136,7 +138,7 @@ export class Terminal {
 
 		// Add command to history
 		this.history.push(command);
-		this.addOutput(`visitor@marlonjr:~$ ${command}`, 'command');
+		this.addOutput(`visitor@marlonii ~ % ${command}`, 'command');
 
 		const parts = command.split(' ');
 		const cmd = parts[0].toLowerCase();
@@ -204,7 +206,9 @@ export class Terminal {
 		this.addOutput('  help          - Show this help message');
 		this.addOutput('');
 		this.addOutput('Available pages:');
-		this.addOutput(`  ${Object.keys(this.pages).filter(p => p !== 'home' && p !== 'index').join(', ')}`);
+		const pages = Object.keys(this.pages).filter(p => p !== 'home' && p !== 'index');
+		pages.forEach(page => this.addOutput(` - ${page}`));
+		// this.addOutput(`  ${Object.keys(this.pages).filter(p => p !== 'home' && p !== 'index').join(', ')}`);
 		this.addPrompt();
 	}
 
