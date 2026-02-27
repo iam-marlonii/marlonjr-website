@@ -28,14 +28,15 @@
 		width: 100%;
 		min-width:1080px;
 		max-width: 1280px;
-		background-color: rgba(10, 10, 10, 0.9);
+		background-color: rgba(10, 10, 10, 0.95);
 		backdrop-filter: blur(100px);
+		-webkit-backdrop-filter: blur(100px);
 		border: 2px solid rgba(105, 215, 242, 0.3);
 		border-radius: 20px;
 		padding: 20px;
 		font-family: 'Kode Mono', monospace;
 		font-size: 14px;
-		color: #69D7F2;
+		color: #ffffff;
 		caret-color: #69D7F2;
 		caret-shape: block;
 		display: flex;
@@ -46,6 +47,7 @@
 
 	.terminal-output {
 		flex: 1;
+		min-height: 0;
 		overflow-y: auto;
 		margin-bottom: 10px;
 		line-height: 1.6;
@@ -74,8 +76,8 @@
 		word-wrap: break-word;
 	}
 
-	.terminal-line.command {
-		color: #69D7F2;
+	:global(.terminal-line.command) {
+		color: #69d7f2 !important;
 	}
 
 	.terminal-input-line {
@@ -84,8 +86,8 @@
 		gap: 8px;
 	}
 
-	.terminal-prompt {
-		color: #69D7F2;
+	:global(.terminal-prompt) {
+		color: #69D7F2 !important;
 		flex-shrink: 0;
 	}
 
@@ -99,6 +101,7 @@
 		outline: none;
 		box-shadow: none;
 		color: #69D7F2;
+		-webkit-text-fill-color: #69D7F2;
 		caret-shape: block;
 		font-family: 'Kode Mono', monospace;
 		font-size: 14px;
